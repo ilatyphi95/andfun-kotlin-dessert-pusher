@@ -65,7 +65,6 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // TODO (01) Add an info level log statement here
         Log.i("MainActivity", "onCreate Called")
 
         // Use Data Binding to get reference to the views
@@ -150,9 +149,13 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         return super.onOptionsItemSelected(item)
     }
 
-    // TODO (02) Override the onStart lifecycle method and add an info level log statement
+    /** Lifecycle Methods **/
+
     override fun onStart() {
         super.onStart()
         Log.i("MainActivity", "onStart Called")
     }
+
+    // TODO (05) Here, override the rest of the lifecycle methods and use Timber to print
+    // log statements. Don't forget to update the log statement in onCreate!
 }
