@@ -18,7 +18,6 @@ package com.example.android.dessertpusher
 
 import android.content.ActivityNotFoundException
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -66,7 +65,6 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        Log.i("MainActivity", "onCreate Called")
         Timber.i("onCreate Called")
 
         // Use Data Binding to get reference to the views
@@ -75,6 +73,8 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         binding.dessertButton.setOnClickListener {
             onDessertClicked()
         }
+
+        // TODO (02) Create a DessertTimer
 
         // Set the TextViews to the right values
         binding.revenue = revenue
@@ -152,11 +152,31 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     }
 
     /** Lifecycle Methods **/
+    // TODO (03) Start the DessertTimer in onStart and stop the timer in onStop
 
     override fun onStart() {
         super.onStart()
-//        Log.i("MainActivity", "onStart Called")
         Timber.i("onStart Called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.i("onResume Called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Timber.i("onPause Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Timber.i("onStop Called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.i("onDestroy Called")
     }
 
     override fun onRestart() {
